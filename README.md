@@ -1,4 +1,4 @@
 simple-template
 ===============
 
-A simple JavaScript template helper
+A simple JavaScript template lib
