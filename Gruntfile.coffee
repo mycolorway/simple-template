@@ -4,8 +4,6 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON 'package.json'
 
-    connect:
-      uses_defaults: {}
     coffee:
       module:
         files:
@@ -16,12 +14,11 @@ module.exports = (grunt) ->
       scripts:
         files: ['src/**/*.coffee', 'spec/**/*.coffee', 'vendor/**/*.coffee']
         tasks: ['coffee']
-      jasmine : {
+      jasmine:
         files: ['lib/**/*.js', 'specs/**/*.js'],
-        tasks: 'jasmine:pivotal:build'
-      }
+        tasks: 'jasmine:test:build'
     jasmine:
-      pivotal:
+      test:
         src: 'lib/**/*.js'
         options:
           outfile: 'spec/index.html'
@@ -36,4 +33,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jasmine'
 
-  grunt.registerTask 'default', ['watch']
+  grunt.registerTask 'default', ['coffee', 'jasmine:test:build', 'watch']
