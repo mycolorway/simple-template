@@ -1,6 +1,6 @@
 {
   "name": "simple-template",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "A simple JavaScript template lib",
   "main": "src/simple-template.coffee",
   "scripts": {
@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/mycolorway/simple-template",
   "dependencies": {
-    "grunt": "~0.4.4",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-coffee": "~0.10.1",
-    "grunt-contrib-jasmine": "~0.6.1"
+    "grunt": "0.x",
+    "grunt-contrib-watch": "0.x",
+    "grunt-contrib-coffee": "0.x",
+    "grunt-contrib-sass": "0.x",
+    "grunt-contrib-jasmine": "0.x",
+    "grunt-umd": "2.x"
   }
 }

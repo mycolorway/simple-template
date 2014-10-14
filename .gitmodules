@@ -1,3 +1,0 @@
-[submodule "vendor/simple-util"]
-	path = vendor/simple-util
-	url = git@github.com:mycolorway/simple-util.git
