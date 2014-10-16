@@ -1,0 +1,31 @@
+{
+  "name": "simple-template",
+  "version": "2.0.0",
+  "homepage": "https://github.com/mycolorway/simple-template",
+  "authors": [
+    "farthinker <farthinker@gmail.com>"
+  ],
+  "description": "A simple JavaScript template lib",
+  "main": "lib/template.js",
+  "keywords": [
+    "template"
+  ],
+  "license": "GPL-v2",
+  "ignore": [
+    "**/.*",
+    "spec",
+    "node_modules",
+    "vendor",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.coffee",
+    "package.json",
+    "README.md",
+    "umd.hbs"
+  ],
+  "dependencies": {
+    "moment-timezone": "~0.2.2",
+    "moment": "~2.8.3",
+    "jquery": "~2.1.1"
+  }
+}
