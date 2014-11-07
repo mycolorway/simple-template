@@ -41,8 +41,8 @@ module.exports = (grunt) ->
         globalAlias: 'tpl'
         deps:
           'default': ['$', 'moment']
-          amd: ['jquery', 'moment']
-          cjs: ['jquery', 'moment']
+          amd: ['jquery', 'moment-timezone']
+          cjs: ['jquery', 'moment-timezone']
           global:
             items: ['jQuery', 'moment']
             prefix: ''

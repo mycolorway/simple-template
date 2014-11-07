@@ -34,7 +34,10 @@ tpl = (template, data, filters) ->
 tpl.filters =
   strftime: (val, param) ->
     return '' unless val? and moment?
-    time = moment.tz(val, simple.tz)
+    if tpl.tz
+      time = moment.tz(val, tpl.tz)
+    else
+      time = moment(val)
     time.format(param)
 
   default: (val, param) ->
@@ -45,7 +48,10 @@ tpl.filters =
     return '' unless simple.readableTime?
 
     param or= "YYYY-MM-DD HH:mm:ss Z"
-    date = moment.tz(val, param, simple.tz)
+    if tpl.tz
+      date = moment.tz(val, param, tpl.tz)
+    else
+      date = moment(val, param)
     simple.readableTime(date)
 
   htmlSafe: (val, param) ->
