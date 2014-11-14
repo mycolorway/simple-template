@@ -24,7 +24,7 @@ describe 'template with filter', ->
     tpl = '''
       <p>{{ timeFormat | strftime 'YYYY-MM-DD' }}</p>
       <p>{{ default | default 'This is default value' }}</p>
-      <p>{{ prettyDate | prettyDate }}</p>
+      <p>{{ prettyDate | readableTime }}</p>
       <p>{{ humanSize | humanSize }}</p>
       <p>{{ truncate | truncate 10 }}</p>
     '''
@@ -40,7 +40,7 @@ describe 'template with filter', ->
     expect(result).toEqual($.trim('''
       <p>2014-03-25</p>
       <p>This is default value</p>
-      <p>4小时前</p>
+      <p>4 hours ago</p>
       <p>2K</p>
       <p>这里只能显示十个字超...</p>
     '''))

@@ -45,7 +45,6 @@ tpl.filters =
 
   readableTime: (val, param) ->
     return '' unless val? and moment?
-    return '' unless simple.readableTime?
 
     param or= "YYYY-MM-DD HH:mm:ss Z"
     if tpl.tz
