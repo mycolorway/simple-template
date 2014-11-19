@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "moment-timezone": "~0.2.2",
+    "moment-readable": "*",
     "moment": "~2.8.3",
     "jquery": "~2.1.1"
   }

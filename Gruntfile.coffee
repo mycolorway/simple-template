@@ -27,9 +27,10 @@ module.exports = (grunt) ->
           outfile: 'spec/index.html'
           specs: 'spec/template-spec.js'
           vendor: [
-            'vendor/bower/moment/moment.js',
+            'vendor/bower/moment/moment.js'
             'vendor/bower/moment-timezone/moment-timezone.js'
-            'vendor/bower/jquery/dist/jquery.js',
+            'vendor/bower/moment-readable/lib/moment-readable.js'
+            'vendor/bower/jquery/dist/jquery.js'
             'vendor/simple-util/lib/util.js'
           ]
     umd:
