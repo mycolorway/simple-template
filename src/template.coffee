@@ -44,16 +44,14 @@ tpl.filters =
     val || param
 
   readableTime: (val, param) ->
-    console.log val
     return '' unless val? and moment?
     return '' unless moment.fn.readableTime?
 
-    param or= "ddd MMM DD YYYY HH:mm:ss [GMT]ZZ"
+    param or= "YYYY-MM-DDTHH:mm:ssZ"
     if tpl.tz
       date = moment.tz(val, param, tpl.tz)
     else
       date = moment(val, param)
-    console.log date.readableTime()
     date.readableTime()
 
   htmlSafe: (val, param) ->
