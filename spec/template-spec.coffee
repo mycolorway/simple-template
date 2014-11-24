@@ -24,7 +24,7 @@ describe 'template with filter', ->
     tpl = '''
       <p>{{ timeFormat | strftime 'YYYY-MM-DD' }}</p>
       <p>{{ default | default 'This is default value' }}</p>
-      <p>{{ prettyDate | prettyDate }}</p>
+      <p>{{ timeReadable | readableTime }}</p>
       <p>{{ humanSize | humanSize }}</p>
       <p>{{ truncate | truncate 10 }}</p>
     '''
@@ -32,7 +32,7 @@ describe 'template with filter', ->
     result = simple.tpl(tpl, {
       timeFormat: 'Tue Mar 25 2014 18:06:51 GMT+0800',
       default: null,
-      prettyDate: moment().add('hour', -4).toString(),
+      timeReadable: moment().add('hour', -4).format(),
       humanSize: 2048,
       truncate: '这里只能显示十个字超过就会被截断'
     })
@@ -40,7 +40,7 @@ describe 'template with filter', ->
     expect(result).toEqual($.trim('''
       <p>2014-03-25</p>
       <p>This is default value</p>
-      <p>4小时前</p>
+      <p>4 hours ago</p>
       <p>2K</p>
       <p>这里只能显示十个字超...</p>
     '''))

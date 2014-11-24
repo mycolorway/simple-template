@@ -15,14 +15,14 @@ describe('basic usage', function() {
 describe('template with filter', function() {
   return it('should filter data while replacing the variables', function() {
     var result, tpl;
-    tpl = '<p>{{ timeFormat | strftime \'YYYY-MM-DD\' }}</p>\n<p>{{ default | default \'This is default value\' }}</p>\n<p>{{ prettyDate | prettyDate }}</p>\n<p>{{ humanSize | humanSize }}</p>\n<p>{{ truncate | truncate 10 }}</p>';
+    tpl = '<p>{{ timeFormat | strftime \'YYYY-MM-DD\' }}</p>\n<p>{{ default | default \'This is default value\' }}</p>\n<p>{{ timeReadable | readableTime }}</p>\n<p>{{ humanSize | humanSize }}</p>\n<p>{{ truncate | truncate 10 }}</p>';
     result = simple.tpl(tpl, {
       timeFormat: 'Tue Mar 25 2014 18:06:51 GMT+0800',
       "default": null,
-      prettyDate: moment().add('hour', -4).toString(),
+      timeReadable: moment().add('hour', -4).format(),
       humanSize: 2048,
       truncate: '这里只能显示十个字超过就会被截断'
     });
-    return expect(result).toEqual($.trim('<p>2014-03-25</p>\n<p>This is default value</p>\n<p>4小时前</p>\n<p>2K</p>\n<p>这里只能显示十个字超...</p>'));
+    return expect(result).toEqual($.trim('<p>2014-03-25</p>\n<p>This is default value</p>\n<p>4 hours ago</p>\n<p>2K</p>\n<p>这里只能显示十个字超...</p>'));
   });
 });

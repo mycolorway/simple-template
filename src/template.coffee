@@ -45,14 +45,14 @@ tpl.filters =
 
   readableTime: (val, param) ->
     return '' unless val? and moment?
-    return '' unless simple.readableTime?
+    return '' unless moment.fn.readableTime?
 
-    param or= "YYYY-MM-DD HH:mm:ss Z"
+    param or= "YYYY-MM-DDTHH:mm:ssZ"
     if tpl.tz
       date = moment.tz(val, param, tpl.tz)
     else
       date = moment(val, param)
-    simple.readableTime(date)
+    date.readableTime()
 
   htmlSafe: (val, param) ->
     (val + "").replace(/&quot;/g, '"')
