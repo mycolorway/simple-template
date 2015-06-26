@@ -85,7 +85,11 @@ tpl.filters =
     val
 
   encodeHtml: (val, param) ->
-    mcw.encodeHtml(val)
+    (value + '').replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
 
   emojify: (val, param) ->
     val = val.replace /:([a-z0-9\+\-_]+):/g, (match, flag) ->

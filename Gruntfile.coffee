@@ -33,6 +33,7 @@ module.exports = (grunt) ->
             'vendor/bower/jquery/dist/jquery.js'
             'vendor/simple-util/lib/util.js'
           ]
+
     umd:
       all:
         src: 'lib/template.js'
