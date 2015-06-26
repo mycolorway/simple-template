@@ -85,7 +85,7 @@ tpl.filters =
     val
 
   encodeHtml: (val, param) ->
-    (value + '').replace(/&/g, '&amp;')
+    (val + '').replace(/&/g, '&amp;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;')
       .replace(/</g, '&lt;')
