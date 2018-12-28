@@ -16,7 +16,7 @@
     "url": "https://github.com/mycolorway/simple-template/issues"
   },
   "homepage": "https://github.com/mycolorway/simple-template",
-  "dependencies": {
+  "devDependencies": {
     "grunt": "0.x",
     "grunt-contrib-watch": "0.x",
     "grunt-contrib-coffee": "0.x",
